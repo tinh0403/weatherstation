@@ -3,7 +3,7 @@
 #define DEFAULT_MQTT_HOST "mqtt1.eoh.io"
 
 // You should get Auth Token in the ERa App or ERa Dashboard
-#define ERA_AUTH_TOKEN "17e4ffb2-ffbf-4c6a-affb-134d12e10114"
+#define ERA_AUTH_TOKEN "YOUR_ERA_TOKEN"
 
 #include <Arduino.h>
 #include <ERa.hpp>
@@ -28,12 +28,12 @@ AnimatedGIF gif;
 
 TFT_eSPI tft = TFT_eSPI(); 
 
-const char* ssid     = "???";
-const char* password = "04032002";
+const char* ssid     = "YOUR_SSID";
+const char* password = "YOUR_PASSWORD";
 
 const char host[] = "api.openweathermap.org";
-String APIKEY = "09a7aeb9f0441ca1a0607f253e25d670";
-String CityID = "1566083";
+String APIKEY = "YOUR_APIKEY";
+String CityID = "CityID";
 
 String data = "";
 String result;
@@ -69,8 +69,6 @@ ERaTimer timer;
 void timerEvent() {
     ERA_LOG("Timer", "Uptime: %d", ERaMillis() / 1000L);
 }
-
-TaskHandle_t LCD; 
 
 TaskHandle_t Era;  
 
@@ -231,7 +229,6 @@ void DisplayTime(String &Date, String &Date1, String &Time)
   tft.setTextSize(3);       
   tft.setCursor(75, 47);
   tft.print(Time);
-
 }
 
 void httpRequest() {
